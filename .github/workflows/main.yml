@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
        - name: this is first step 
-         run: echo "Hello step 1" 
+         run: echo "Hello step 1"
        - name: second step 
-         run:
+         run: |
            echo "Hello step 2"
-           cat /ect/os-release  
+           cat /etc/os-release  
        - run: echo "step3"
         
