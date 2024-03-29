@@ -2,7 +2,7 @@ name: workflow1
 on: push 
 jobs: 
   build: 
-    runs-on: ubuntun-latest
+    runs-on: ubuntu-latest
     steps: 
        - name: this is first step 
          run: echo "Hello step 1" 
