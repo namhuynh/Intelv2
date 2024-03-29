@@ -4,7 +4,7 @@ on:
   push:
 jobs: 
   build: 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-ubuntu-20.04
     steps: 
        - name: this is first step 
          run: |
