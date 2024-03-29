@@ -2,13 +2,13 @@ name: workflow1
 on: push 
 jobs: 
  build: 
-   run-on: ubuntun-latest
+   runs-on: ubuntun-latest
    steps: 
      - name: this is first step 
-     -run: echo "Hello step 1" 
+       run: echo "Hello step 1" 
      - name: second step 
-      run:
+       run:
         echo "Hello step 2"
         cat /ect/os-release
-      -run: echo "step3"
+      - run: echo "step3"
         
