@@ -5,7 +5,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: namhuynh
+    runs-on:  self-hosted
     steps:
        - name: this is first step
          run: |
