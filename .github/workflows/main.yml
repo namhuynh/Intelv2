@@ -9,6 +9,6 @@ jobs:
        - name: second step 
          run:
            echo "Hello step 2"
-           cat /ect/os-release
+           cat /ect/os-release  
        - run: echo "step3"
         
