@@ -6,7 +6,7 @@ jobs:
     steps: 
        - name: this is first step 
          run: echo "Hello step 1"
-              sleep 3
+              sleep 30
        - name: second step 
          run: |
            echo "Hello step 2"
