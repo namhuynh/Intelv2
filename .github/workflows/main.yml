@@ -1,19 +1,20 @@
+# This is my first workflow
 name: workflow1
 on: 
   workflow_dispatch:
   push:
-jobs: 
-  build: 
-    runs-on: ubuntu-20.04
-    steps: 
-       - name: this is first step 
+jobs:
+  build:
+    runs-on: namhuynh
+    steps:
+       - name: this is first step
          run: |
-              echo "Hello step 1"
-              sleep 30
-       - name: second step 
-         run: |
-           echo "Hello step 2"
-           cat /etc/os-release  
+           echo $HOSTNAME
            sleep 30
-       - run: echo "step3"
-        
+       - name: second step
+         run: |
+           uname -a
+           cat /etc/os-release
+           touch /tmp/namhuynh
+           sleep 30
+       - run: echo "step 3"
