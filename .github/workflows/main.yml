@@ -12,11 +12,11 @@ jobs:
            echo $name is the owner of this repo
            sleep 30
            env: 
-         name: namhuynh
+       - name: namhuynh
        - name: second step
          run: |
            uname -a
-           cat /etc/os-release
+           echo $name is the owner of this repo
            touch /tmp/namhuynh
            sleep 30
        - run: echo "step 3"
