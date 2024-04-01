@@ -27,7 +27,7 @@ jobs:
     steps:
        - name: this is first step
          run: |
-           echo $HOSTNAME
+           echo $name is the owner of this repo. Reachout to $name for any updates. 
            sleep 30
        - name: second step
          run: |
