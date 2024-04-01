@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on:  ubuntu-latest
+    env: 
+      last_name: huynh
     steps:
        - name: this is first step
          run: |
