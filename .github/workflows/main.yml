@@ -16,7 +16,7 @@ jobs:
        - name: second step
          run: |
            uname -a
-           echo $name is the owner of this repo
+           echo $name is the owner of this repo. Reachout to $name of this repo
            touch /tmp/namhuynh
            sleep 30
        - run: echo "step 3"
