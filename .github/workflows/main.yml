@@ -3,6 +3,8 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+env: 
+  greeting: hello
 jobs:
   build:
     runs-on:  ubuntu-latest
