@@ -22,6 +22,25 @@ jobs:
          run: echo hello from step 1
        - name: this is Seccond build step 
          run : |
+           sleep 10
+           echo hello from step 2
+  stage: 
+      runs-on: ubuntu- lastes 
+      needs: build
+      steps: 
+       - name: this is first step
+         run: echo hello from step 1
+       - name: this is Seccond build step 
+         run : |
            sleep 3
            echo hello from step 2
-         
+  deploy: 
+      runs-on: ubuntu- lastes 
+      needs: build
+      steps: 
+       - name: this is first step
+         run: echo hello from step 1
+       - name: this is Seccond build step 
+         run : |
+           sleep 10
+           echo hello from step 2
