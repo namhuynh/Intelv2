@@ -19,7 +19,7 @@ jobs:
        - name: this is third build step 
          run : echo hello from step 3
   test: 
-      runs-on: ubuntu- lastes 
+      runs-on: windows- lastes 
       needs: build
       
       steps: 
