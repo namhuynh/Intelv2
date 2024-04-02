@@ -17,9 +17,10 @@ jobs:
   test: 
       runs-on: ubuntu- lastes 
       needs: build
+      continue-on-error: yes
       steps: 
        - name: this is first step
-         run: echo hello from step 1
+         run: cho hello from step 1
        - name: this is Seccond build step 
          run : |
            sleep 10
