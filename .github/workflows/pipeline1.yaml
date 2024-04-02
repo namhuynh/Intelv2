@@ -16,7 +16,7 @@ jobs:
          run : echo hello from step 3
   test: 
       runs-on: ubuntu- lastes 
-      needs: build
+      #needs: build
       steps: 
        - name: this is first step
          run: echo hello from step 1
