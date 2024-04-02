@@ -9,15 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - name: this is first step
-         run: echo hello from step 1
-       - name: this is Seccond build step 
+       - name: step zero 
+         uses: actions/ checkout@v4.1.2
+       - name: this is first build step 
+         run : ls-s
+       - name: this is second build step 
          run : |
            sleep 10
            echo hello from step 2
-         if: github.event_name == 'push'
-       - name: this is third build step 
-         run : echo hello from step 3
+
   test: 
       runs-on: windows- lastes 
       needs: build
