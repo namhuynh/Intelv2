@@ -1,0 +1,27 @@
+name: workflow1
+on: 
+  workflow_dispatch:
+  push:
+env:
+ greetings: hello
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: this is first step
+         run: echo hello from step 1
+       - name: this is Seccond build step 
+         run : echo hello from step 2
+       - name: this is third build step 
+         run : echo hello from step 3
+  test: 
+      runs-on: ubuntu- lastes 
+      needs: build
+      steps: 
+       - name: this is first step
+         run: echo hello from step 1
+       - name: this is Seccond build step 
+         run : |
+           sleep 3
+           echo hello from step 2
+         
