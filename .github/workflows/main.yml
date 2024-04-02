@@ -15,7 +15,7 @@ jobs:
        - name: this is first step
          run: |
            echo $greetings! $name $last_name is the owner of $GITHUB_REPOSITORY repo for application ${{ vars.APP_NAME }} . Reachout to $name for any updates.
-           ech This step is running on $RUNNER_OS on instance $RUNNER_NAME
+           echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
            echo ${{ vars.APP_NAME }} is running on ${{ vars.SERVER_NAME }}
            echo Application password is ${{ secrets.DB_PASSWORD }}
            sleep 10
