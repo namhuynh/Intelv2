@@ -2,6 +2,9 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+  pull_request: 
+  schedule:
+   - cron: "*/5 * * * *"
 env:
  greetings: hello
 jobs:
