@@ -2,6 +2,7 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+  pull_request: 
 env:
  greetings: hello
 jobs:
@@ -11,7 +12,10 @@ jobs:
        - name: this is first step
          run: echo hello from step 1
        - name: this is Seccond build step 
-         run : echo hello from step 2
+         run : |
+           sleep 10
+           echo hello from step 2
+         if: github.event_name == 'push'
        - name: this is third build step 
          run : echo hello from step 3
   test: 
