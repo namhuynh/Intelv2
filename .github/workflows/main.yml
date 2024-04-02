@@ -50,9 +50,8 @@ jobs:
 
   stage:
     runs-on: ubuntu-latest
-    needs: |
-        test
-        build
+    needs: test
+      
     environment: prod
     steps:
        - name: this is first step
