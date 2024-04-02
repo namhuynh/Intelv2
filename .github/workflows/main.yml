@@ -14,7 +14,7 @@ jobs:
        - name: this is first step
          run: |
            echo $name is the owner of this repo
-           echo Application password is ${{secret.DB_PASSWORD }}
+           echo Application password is ${{ secret.DB_PASSWORD }}
            sleep 10
          env:
            name: namhuynh
