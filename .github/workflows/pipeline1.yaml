@@ -16,7 +16,7 @@ jobs:
          run : echo hello from step 3
   test: 
       runs-on: ubuntu- lastes 
-      #needs: build
+      needs: build
       steps: 
        - name: this is first step
          run: echo hello from step 1
@@ -36,7 +36,7 @@ jobs:
            echo hello from step 2
   deploy: 
       runs-on: ubuntu- lastes 
-      needs: stage
+      needs: test
       steps: 
        - name: this is first step
          run: echo hello from step 1
