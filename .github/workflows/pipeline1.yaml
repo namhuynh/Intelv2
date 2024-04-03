@@ -16,6 +16,7 @@ jobs:
        - name: this is Second build step
          run: |
            sleep 10
+           exit 1
            echo hello from step 2
          if: github.event_name == 'push'
        - name: this is Third build step
