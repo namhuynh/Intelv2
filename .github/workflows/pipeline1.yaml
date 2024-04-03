@@ -30,9 +30,11 @@ jobs:
          run: |
            sleep 10
            echo hello from step 2
+       - name: debug step 
+         run: echo "Job got failed" 
   stage:
     runs-on: ubuntu-latest
-    if: ${{ always() }}
+    if: ${{ failure() }}
     needs: test
     steps:
        - name: this is first stage step
