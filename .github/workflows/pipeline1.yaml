@@ -1,51 +1,53 @@
-name: workflow1
+name: pipeline1
 on: 
   workflow_dispatch:
   push:
-  pull_request: 
-env:
- greetings: hello
+  pull_request:
+  schedule:
+    - cron: "*/5 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - name: step zero 
-         uses: actions/ checkout@v4.1.2
-       - name: this is first build step 
-         run : ls-s
-       - name: this is second build step 
-         run : |
+       - name: step zero
+         uses: actions/checkout@v4.1.2
+       - name: this is first build step
+         run: ls -l
+       - name: this is Second build step
+         run: |
            sleep 10
            echo hello from step 2
-
-  test: 
-      runs-on: windows- lastes 
-      needs: build
-      
-      steps: 
-       - name: this is first step
-         run: cho hello from step 1
-       - name: this is Seccond build step 
-         run : |
-           sleep 10
-           echo hello from step 2
-  stage: 
-      runs-on: ubuntu- lastes 
-      needs: test
-      steps: 
-       - name: this is first step
+         if: github.event_name == 'push'
+       - name: this is Third build step
+         run: echo hello from step 2
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+       - name: this is first test step
          run: echo hello from step 1
-       - name: this is Seccond build step 
-         run : |
-           sleep 3
-           echo hello from step 2
-  deploy: 
-      runs-on: ubuntu- lastes 
-      needs: stage
-      steps: 
-       - name: this is first step
-         run: echo hello from step 1
-       - name: this is Seccond build step 
-         run : |
+       - name: this is Second test step
+         run: |
            sleep 10
            echo hello from step 2
+  stage:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: test
+    steps:
+       - name: this is first stage step
+         run: echo hello from step 1
+       - name: this is Second stage step
+         run: |
+           sleep 10
+           echo hello from step 2
+  deploy:
+    runs-on: ubuntu-latest
+    needs: stage
+    steps:
+       - name: this is first prod step
+         run: echo hello from step 1
+       - name: this is Second prod step
+         run: |
+           sleep 10
+           echo hello from step 2         
